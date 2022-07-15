@@ -25,9 +25,6 @@ git clone \
 cd $HOME/bundlr/validator-rust && \
 cargo run --bin wallet-tool create > wallet.json
 
-break
-;;
-
 cd $HOME/bundlr/validator-rust && \
 cargo run --bin wallet-tool show-address \
 --wallet wallet.json | jq ".address" | tr -d '"'
@@ -37,18 +34,10 @@ sleep 2
 echo "========================================================================================================================"
 echo "Токены по адресу нужно запросить тут - https://bundlr.network/faucet"
 echo "========================================================================================================================"
-
-break
-;;
-
-"Check log")                 
+                
 cd $HOME/bundlr/validator-rust && \
 docker-compose logs -f --tail 10
 
-break
-;;   
-
-"Run docker")
 PORT=2109
 echo "============================================================"
 echo "Введите адрес кошелька"
@@ -83,5 +72,3 @@ echo -e 'Проверить логи: \e[1m\e[32mcd $HOME/bundlr/validator-rust 
 docker-compose logs -f --tail 10'
 echo -e 'Close logs Control+C and continiue install'
 
-break
-;;
